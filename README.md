@@ -66,6 +66,7 @@ VPN/
 ```
 
 ## Architecture
+![VPN Architecture](docs/images/vpn.png)
 
 ### Component Diagram
 ```
@@ -90,7 +91,6 @@ VPN/
 | +-------------+  |         | +-----------+    |         |                  |
 +------------------+         +-------------------+         +------------------+
 
-![VPN Architecture](docs/images/vpn_architecture.png)
 
 Key Components:
 - TUN Interface: Virtual network device for packet capture
@@ -211,19 +211,19 @@ iptables -A FORWARD -i eth0 -o tun0 -m state --state RELATED,ESTABLISHED -j ACCE
 ## Example Outputs
 
 ### Server Running
-![VPN Server Output](docs/images/server_running.png)
+![VPN Server Output](docs/images/1.png)
 
 ### Client Connected
-![VPN Client Connection](docs/images/client_connected.png)
+![VPN Client Connection](docs/images/2.png)
 
 ### Network Traffic Flow
-![Network Traffic](docs/images/network_traffic.png)
+![Network Traffic](docs/images/3.png)
 
 ### TUN Interface Status
-![TUN Interface](docs/images/tun_status.png)
+![TUN Interface](docs/images/4.png)
 
 ### Successful Tunneling
-![Tunneling Demo](docs/images/tunnel_demo.png)
+![Tunneling Demo](docs/images/5.png)
 
 ## License
 
