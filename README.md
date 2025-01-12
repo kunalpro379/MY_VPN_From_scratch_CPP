@@ -66,7 +66,7 @@ VPN/
 ```
 
 ## Architecture
-![VPN Architecture](docs/images/vpn.png)
+![VPN Architecture](docs/images/vpn.jpg)
 
 ### Component Diagram
 ```
@@ -211,19 +211,19 @@ iptables -A FORWARD -i eth0 -o tun0 -m state --state RELATED,ESTABLISHED -j ACCE
 ## Example Outputs
 
 ### Server Running
-![VPN Server Output](docs/images/1.png)
+![VPN Server Output](images/1.png)
 
 ### Client Connected
-![VPN Client Connection](docs/images/2.png)
+![VPN Client Connection](images/2.png)
 
 ### Network Traffic Flow
-![Network Traffic](docs/images/3.png)
+![Network Traffic](images/3.png)
 
 ### TUN Interface Status
-![TUN Interface](docs/images/4.png)
+![TUN Interface](images/4.png)
 
 ### Successful Tunneling
-![Tunneling Demo](docs/images/5.png)
+![Tunneling Demo](images/5.png)
 
 ## License
 
