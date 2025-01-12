@@ -66,7 +66,7 @@ VPN/
 ```
 
 ## Architecture
-![VPN Architecture](docs/images/vpn.jpg)
+![VPN Architecture](images/vpn.jpg)
 
 ### Component Diagram
 ```
