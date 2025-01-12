@@ -2,6 +2,9 @@
 
 A lightweight VPN implementation using TUN interfaces and OpenSSL for secure tunneling.
 
+## Architecture
+![VPN Architecture](images/vpn.jpg)
+
 ## Prerequisites
 
 - Linux operating syste
@@ -9,6 +12,7 @@ A lightweight VPN implementation using TUN interfaces and OpenSSL for secure tun
 - g++ compiler
 - OpenSSL development libraries
 - TUN/TAP kernel module
+
 
 ## Installation
 ```bash
@@ -65,8 +69,7 @@ VPN/
 
 ```
 
-## Architecture
-![VPN Architecture](images/vpn.jpg)
+
 
 ### Component Diagram
 ```
