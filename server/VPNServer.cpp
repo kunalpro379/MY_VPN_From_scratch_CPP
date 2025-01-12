@@ -1,5 +1,3 @@
-bro make a code in old cpp style and add comment explaining the next line of code
-
 #include "../tun_interface/TunDevice.hpp"
 #include "../tun_interface/VPNConnection.hpp"
 #include <iostream>
@@ -7,10 +5,10 @@ bro make a code in old cpp style and add comment explaining the next line of cod
 using namespace std;
 class VPNServer {
 private:
-    TunDevice tun;  // TUN device object
-    VPNConnection vpn;  // VPN connection object
-    string interfaceName;  // Interface name
-    int port;  // Port number
+    TunDevice tun;  
+    VPNConnection vpn;  
+    string interfaceName; 
+    int port;  
     char buffer[TunDevice::BUFFER_SIZE];  // Buffer for data
     unsigned long packets_sent, packets_received;  // Packet counters
 
@@ -54,7 +52,8 @@ public:
             FD_SET(tun.getFd(), &readSet);  // Add TUN device file descriptor to the set
             FD_SET(vpn.getFd(), &readSet);  // Add VPN connection file descriptor to the set
 
-            // Get the maximum file descriptor value
+            // Get the maximum file descriptor value?? why? 
+            // The select() function requires the maximum file descriptor value plus one as the first argument.
             int maxFd = max(tun.getFd(), vpn.getFd()) + 1;
             // Wait for data on either file descriptor
             if (select(maxFd, &readSet, nullptr, nullptr, nullptr) < 0) {

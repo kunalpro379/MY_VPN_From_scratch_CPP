@@ -5,7 +5,6 @@ GREEN='\033[0;32m'
 RED='\033[0;31m'
 NC='\033[0m' # No Color
 
-
 print_status() {
     echo -e "${GREEN}[*]${NC} $1"
 }
@@ -71,6 +70,8 @@ case "$1" in
         generate_certificates
         compile
         print_status "Starting server..."
+        sudo sysctl -w net.ipv4.ip_forward=1
+        sudo iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
         sudo ./vpn -i tun0 -s -p 55555
         ;;
     "client")
@@ -78,6 +79,7 @@ case "$1" in
         compile
         print_status "Starting client..."
         sudo ./vpn -i tun1 -c 127.0.0.1 -p 55555
+        sudo ip route replace default dev tun1
         ;;
     "clean")
         clean

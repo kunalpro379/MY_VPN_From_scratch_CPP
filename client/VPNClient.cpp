@@ -19,12 +19,17 @@ private:
     char buffer[TunDevice::BUFFER_SIZE];
     // Counters for packets sent and received
     unsigned long packets_sent, packets_received;
+    // Certificate paths
+    string certPath;
+    string keyPath;
 
 public:
     // Constructor
-    VPNClient(const string& iface, const string& serverIP, int port)
+    VPNClient(const string& iface, const string& serverIP, int port,
+              const string& certPath = "", const string& keyPath = "")
         : tun(iface, false), vpn(false), interfaceName(iface), 
-          serverIP(serverIP), port(port), packets_sent(0), packets_received(0) {}
+          serverIP(serverIP), port(port), packets_sent(0), packets_received(0),
+          certPath(certPath), keyPath(keyPath) {}
 
     // Initialize the VPN client
     bool initialize() {
@@ -35,7 +40,17 @@ public:
         }
         cout << "Successfully initialized TUN device " << interfaceName << endl;
 
+        // Configure SSL if certificates are provided
+        if (!certPath.empty() && !keyPath.empty()) {
+            if (!vpn.configureCertificates(certPath, keyPath)) {
+                cerr << "Failed to configure SSL certificates\n";
+                return false;
+            }
+        }
+
         // Connect to the VPN server
+
+
         if (!vpn.connect(serverIP, port)) {
             cerr << "Failed to connect to server\n";
             return false;
