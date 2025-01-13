@@ -215,7 +215,7 @@ iptables -A FORWARD -i eth0 -o tun0 -m state --state RELATED,ESTABLISHED -j ACCE
 
 
 ![VPN Server Output](images/1.png)
-
+![image](https://github.com/user-attachments/assets/c7abc013-0638-4cf7-8979-3de14270da56)
 
 ![VPN Client Connection](images/2.png)
 
