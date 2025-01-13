@@ -213,21 +213,19 @@ iptables -A FORWARD -i eth0 -o tun0 -m state --state RELATED,ESTABLISHED -j ACCE
 
 ## Example Outputs
 
-### Server Running
+
 ![VPN Server Output](images/1.png)
 
-### Client Connected
+
 ![VPN Client Connection](images/2.png)
 
-### Network Traffic Flow
+
 ![Network Traffic](images/3.png)
 
-### TUN Interface Status
+
 ![TUN Interface](images/4.png)
 
-### Successful Tunneling
+
 ![Tunneling Demo](images/5.png)
 
-## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
