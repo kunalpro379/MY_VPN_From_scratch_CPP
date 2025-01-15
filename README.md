@@ -32,44 +32,6 @@ Comprehensive documentation is available in the following files:
 - [Firewall Setup](docs/FIREWALL.md)
 - [Encryption and Security](docs/ENCRYPTION.md)
 
-## Project Structure
-
-```
-VPN/
-├── certificates/              # SSL certificates
-│   ├── ca.crt
-│   ├── ca.key
-│   ├── server.crt
-│   ├── server.key
-│   ├── client.crt
-│   └── client.key
-├── config/                    # Configuration files
-│   ├── server.conf
-│   └── client.conf
-├── scripts/
-│   ├── generate_certs.sh
-│   ├── setup_server.sh
-│   └── setup_client.sh
-├── src/                       # Main source code
-│   ├── main.cpp
-│   └── common/
-│       └── utils.cpp
-├── tun_interface/            # TUN device handling
-│   ├── TunDevice.cpp
-│   ├── TunDevice.h
-│   ├── VPNConnection.cpp
-│   └── VPNConnection.h
-├── tunneling/                # Tunneling logic
-│   ├── Tunnel.cpp
-│   └── Tunnel.h
-├── tests/                    # Unit tests
-│   ├── test_tun.cpp
-│   └── test_tunnel.cpp
-└── run.sh
-
-```
-
-
 
 ### Component Diagram
 ```
